@@ -1,5 +1,7 @@
 import { ChevronDown } from "lucide-react"
 import { Language, Translation } from "../types"
+import Image from "next/image"
+import sekulaLogo from '../../assets/sekula-logo.png'
 
 interface SidebarProps {
   currentLanguage: Language
@@ -36,7 +38,7 @@ export default function Sidebar({
       case "pl":
         return "🇵🇱"
       case "en":
-        return "🇺🇸"
+        return "🇺🇸" 
       case "ua":
         return "🇺🇦"
       case "ka":
@@ -49,7 +51,14 @@ export default function Sidebar({
   return (
     <div className="p-6">
       <div className="mb-6 flex justify-center">
-        <img src="/images/sekula-logo-enhanced.png" alt="SEKULA" className="h-20 w-auto max-w-full" />
+         {/*<img src="/images/sekula-logo-enhanced.png" alt="SEKULA" className="h-20 w-auto max-w-full" /> */}
+          <Image
+            src={sekulaLogo}
+            alt="SEKULA"
+            className="h-20 w-auto max-w-full"
+            width={100}
+            height={100}
+          />
       </div>
 
       {/* Navigation */}

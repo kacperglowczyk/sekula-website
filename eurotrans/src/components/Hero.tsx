@@ -1,5 +1,7 @@
 import { ChevronDown } from "lucide-react"
 import { Translation } from "../types"
+import Image from "next/image"
+import businessLocation from '../../assets/business-location.jpeg'
 
 interface HeroProps {
   t: Translation
@@ -8,11 +10,13 @@ interface HeroProps {
 export default function Hero({ t }: HeroProps) {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url(/images/business-location.jpg)",
-        }}
+      <Image
+        src={businessLocation}
+        alt="Business location background"
+        fill
+        className="object-cover object-center"
+        priority
+        quality={90}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
 
